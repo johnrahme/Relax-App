@@ -14,6 +14,7 @@
 		84F1C7811ABA597C0092CB08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F1C7801ABA597C0092CB08 /* Images.xcassets */; };
 		84F1C7841ABA597C0092CB08 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F1C7821ABA597C0092CB08 /* LaunchScreen.xib */; };
 		84F1C7901ABA597C0092CB08 /* Relax_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F1C78F1ABA597C0092CB08 /* Relax_AppTests.m */; };
+		84F1C79A1ABA5B800092CB08 /* Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F1C7991ABA5B800092CB08 /* Ipad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		84F1C7891ABA597C0092CB08 /* Relax AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Relax AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F1C78E1ABA597C0092CB08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F1C78F1ABA597C0092CB08 /* Relax_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Relax_AppTests.m; sourceTree = "<group>"; };
+		84F1C7991ABA5B800092CB08 /* Ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ipad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				84F1C77A1ABA597C0092CB08 /* ViewController.h */,
 				84F1C77B1ABA597C0092CB08 /* ViewController.m */,
 				84F1C77D1ABA597C0092CB08 /* Main.storyboard */,
+				84F1C7991ABA5B800092CB08 /* Ipad.storyboard */,
 				84F1C7801ABA597C0092CB08 /* Images.xcassets */,
 				84F1C7821ABA597C0092CB08 /* LaunchScreen.xib */,
 				84F1C7731ABA597C0092CB08 /* Supporting Files */,
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F1C79A1ABA5B800092CB08 /* Ipad.storyboard in Resources */,
 				84F1C77F1ABA597C0092CB08 /* Main.storyboard in Resources */,
 				84F1C7841ABA597C0092CB08 /* LaunchScreen.xib in Resources */,
 				84F1C7811ABA597C0092CB08 /* Images.xcassets in Resources */,
@@ -348,6 +352,7 @@
 				INFOPLIST_FILE = "Relax App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -358,6 +363,7 @@
 				INFOPLIST_FILE = "Relax App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
