@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8490393E1ABE29A900E67F77 /* kurt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8490393D1ABE29A900E67F77 /* kurt.mp4 */; };
+		849039411ABE3B5000E67F77 /* ViewRelax.m in Sources */ = {isa = PBXBuildFile; fileRef = 849039401ABE3B5000E67F77 /* ViewRelax.m */; };
+		84E3B8B71ABE01E30049721A /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84E3B8B61ABE01E30049721A /* sound2.wav */; };
+		84E3B8B91ABE117D0049721A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3B8B81ABE117D0049721A /* MediaPlayer.framework */; };
 		84F1C7761ABA597C0092CB08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F1C7751ABA597C0092CB08 /* main.m */; };
 		84F1C7791ABA597C0092CB08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F1C7781ABA597C0092CB08 /* AppDelegate.m */; };
 		84F1C77C1ABA597C0092CB08 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F1C77B1ABA597C0092CB08 /* ViewController.m */; };
@@ -28,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8490393C1ABE1D2800E67F77 /* kurt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = kurt.mp4; path = ../../../../Downloads/kurt.mp4; sourceTree = "<group>"; };
+		8490393D1ABE29A900E67F77 /* kurt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = kurt.mp4; path = ../../../../Downloads/kurt.mp4; sourceTree = "<group>"; };
+		8490393F1ABE3B5000E67F77 /* ViewRelax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewRelax.h; sourceTree = "<group>"; };
+		849039401ABE3B5000E67F77 /* ViewRelax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewRelax.m; sourceTree = "<group>"; };
+		84E3B8B61ABE01E30049721A /* sound2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound2.wav; sourceTree = "<group>"; };
+		84E3B8B81ABE117D0049721A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84F1C7701ABA597C0092CB08 /* Relax App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Relax App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F1C7741ABA597C0092CB08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F1C7751ABA597C0092CB08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E3B8B91ABE117D0049721A /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,7 @@
 		84F1C7671ABA597C0092CB08 = {
 			isa = PBXGroup;
 			children = (
+				84E3B8B81ABE117D0049721A /* MediaPlayer.framework */,
 				84F1C7721ABA597C0092CB08 /* Relax App */,
 				84F1C78C1ABA597C0092CB08 /* Relax AppTests */,
 				84F1C7711ABA597C0092CB08 /* Products */,
@@ -83,11 +95,15 @@
 		84F1C7721ABA597C0092CB08 /* Relax App */ = {
 			isa = PBXGroup;
 			children = (
+				8490393C1ABE1D2800E67F77 /* kurt.mp4 */,
+				84E3B8B61ABE01E30049721A /* sound2.wav */,
 				84F1C7771ABA597C0092CB08 /* AppDelegate.h */,
 				84F1C7781ABA597C0092CB08 /* AppDelegate.m */,
 				84F1C77A1ABA597C0092CB08 /* ViewController.h */,
 				84F1C77B1ABA597C0092CB08 /* ViewController.m */,
 				84F1C77D1ABA597C0092CB08 /* Main.storyboard */,
+				8490393F1ABE3B5000E67F77 /* ViewRelax.h */,
+				849039401ABE3B5000E67F77 /* ViewRelax.m */,
 				84F1C7991ABA5B800092CB08 /* Ipad.storyboard */,
 				84F1C7801ABA597C0092CB08 /* Images.xcassets */,
 				84F1C7821ABA597C0092CB08 /* LaunchScreen.xib */,
@@ -99,6 +115,7 @@
 		84F1C7731ABA597C0092CB08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8490393D1ABE29A900E67F77 /* kurt.mp4 */,
 				84F1C7741ABA597C0092CB08 /* Info.plist */,
 				84F1C7751ABA597C0092CB08 /* main.m */,
 			);
@@ -202,6 +219,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E3B8B71ABE01E30049721A /* sound2.wav in Resources */,
+				8490393E1ABE29A900E67F77 /* kurt.mp4 in Resources */,
 				84F1C79A1ABA5B800092CB08 /* Ipad.storyboard in Resources */,
 				84F1C77F1ABA597C0092CB08 /* Main.storyboard in Resources */,
 				84F1C7841ABA597C0092CB08 /* LaunchScreen.xib in Resources */,
@@ -224,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F1C77C1ABA597C0092CB08 /* ViewController.m in Sources */,
+				849039411ABE3B5000E67F77 /* ViewRelax.m in Sources */,
 				84F1C7791ABA597C0092CB08 /* AppDelegate.m in Sources */,
 				84F1C7761ABA597C0092CB08 /* main.m in Sources */,
 			);
@@ -420,6 +440,7 @@
 				84F1C7951ABA597C0092CB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84F1C7961ABA597C0092CB08 /* Build configuration list for PBXNativeTarget "Relax AppTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +449,7 @@
 				84F1C7981ABA597C0092CB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

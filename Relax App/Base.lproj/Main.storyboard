@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,22 +14,81 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioT-je-W6A">
-                                <rect key="frame" x="133" y="296" width="109" height="33"/>
-                                <state key="normal" title="Iphone button">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sQ-bA-yyf">
+                                <rect key="frame" x="257" y="168" width="86" height="30"/>
+                                <state key="normal" title="Start video!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7n-Ze-PJs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-eY-95w">
+                                <rect key="frame" x="277" y="93" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cVC-Bl-7q7" kind="presentation" id="w2g-yn-qKt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8sQ-bA-yyf" secondAttribute="centerX" id="X59-o5-vlp"/>
+                            <constraint firstItem="8sQ-bA-yyf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="148" id="kZM-HD-1t2"/>
+                            <constraint firstAttribute="centerX" secondItem="8sQ-bA-yyf" secondAttribute="centerX" id="nO0-gh-rgr"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="137"/>
+        </scene>
+        <!--View Relax-->
+        <scene sceneID="6qD-zN-BDF">
+            <objects>
+                <viewController id="cVC-Bl-7q7" customClass="ViewRelax" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dPI-cf-IHu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bj4-KY-6yM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QGG-OJ-XUo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQT-Tl-2OO">
+                                <rect key="frame" x="26" y="58" width="548" height="158"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-ug-P5l">
+                                <rect key="frame" x="279" y="29" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pQT-Tl-2OO" firstAttribute="leading" secondItem="QGG-OJ-XUo" secondAttribute="leadingMargin" constant="10" id="4bb-jK-P0e"/>
+                            <constraint firstItem="pQT-Tl-2OO" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="38" id="dSc-Tw-23u"/>
+                            <constraint firstItem="pQT-Tl-2OO" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="38" id="fZJ-qQ-Qcm"/>
+                            <constraint firstItem="rqx-ug-P5l" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="9" id="ooa-Rs-74Q"/>
+                            <constraint firstAttribute="centerX" secondItem="rqx-ug-P5l" secondAttribute="centerX" id="st2-fx-FYy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pQT-Tl-2OO" secondAttribute="trailing" constant="10" id="w3v-YX-hzw"/>
+                            <constraint firstAttribute="centerX" secondItem="pQT-Tl-2OO" secondAttribute="centerX" id="ytd-Ej-Vzi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wmf-bo-bxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="47"/>
         </scene>
     </scenes>
 </document>
