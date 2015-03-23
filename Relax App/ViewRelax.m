@@ -7,12 +7,15 @@
 //
 
 #import "ViewRelax.h"
+#import "MediaPlayer/MediaPlayer.h"
 
 @interface ViewRelax ()
 
 @end
 
 @implementation ViewRelax
+@synthesize moviePlayer;
+@synthesize videoView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +37,12 @@
 }
 */
 
+- (IBAction)play:(id)sender {
+    NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"sound2" ofType:@"wav"];
+    
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:videoFile]];
+    moviePlayer.view.frame = videoView.frame;
+    [self.view addSubview:moviePlayer.view];
+    [moviePlayer prepareToPlay];
+}
 @end

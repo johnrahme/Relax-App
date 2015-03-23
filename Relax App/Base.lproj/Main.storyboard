@@ -61,34 +61,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQT-Tl-2OO">
-                                <rect key="frame" x="26" y="58" width="548" height="158"/>
+                                <rect key="frame" x="26" y="57" width="548" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-ug-P5l">
-                                <rect key="frame" x="279" y="29" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Beskrivning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-ug-P5l">
+                                <rect key="frame" x="248" y="28" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mih-5i-wHY">
+                                <rect key="frame" x="277" y="514" width="46" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="cVC-Bl-7q7" eventType="touchUpInside" id="vDr-Xo-756"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="light-blue-background-3" translatesAutoresizingMaskIntoConstraints="NO" id="wNL-Ir-Shn">
+                                <rect key="frame" x="81" y="196" width="439" height="167"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffo-NV-cVi">
+                                <rect key="frame" x="26" y="381" width="548" height="38"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pQT-Tl-2OO" firstAttribute="leading" secondItem="QGG-OJ-XUo" secondAttribute="leadingMargin" constant="10" id="4bb-jK-P0e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ffo-NV-cVi" secondAttribute="trailing" constant="10" id="I6i-Zr-S6x"/>
+                            <constraint firstItem="ffo-NV-cVi" firstAttribute="leading" secondItem="QGG-OJ-XUo" secondAttribute="leadingMargin" constant="10" id="IIi-5g-zX6"/>
+                            <constraint firstItem="Bj4-KY-6yM" firstAttribute="top" secondItem="mih-5i-wHY" secondAttribute="bottom" constant="56" id="IOV-ib-ETz"/>
+                            <constraint firstItem="ffo-NV-cVi" firstAttribute="top" secondItem="wNL-Ir-Shn" secondAttribute="bottom" constant="14" id="RFs-64-SQH"/>
+                            <constraint firstAttribute="centerX" secondItem="mih-5i-wHY" secondAttribute="centerX" id="US4-17-2O0"/>
+                            <constraint firstAttribute="centerX" secondItem="ffo-NV-cVi" secondAttribute="centerX" id="cnz-Og-imd"/>
                             <constraint firstItem="pQT-Tl-2OO" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="38" id="dSc-Tw-23u"/>
                             <constraint firstItem="pQT-Tl-2OO" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="38" id="fZJ-qQ-Qcm"/>
+                            <constraint firstItem="wNL-Ir-Shn" firstAttribute="top" secondItem="pQT-Tl-2OO" secondAttribute="bottom" constant="31" id="iBJ-OX-gEZ"/>
                             <constraint firstItem="rqx-ug-P5l" firstAttribute="top" secondItem="dPI-cf-IHu" secondAttribute="bottom" constant="9" id="ooa-Rs-74Q"/>
+                            <constraint firstAttribute="centerX" secondItem="wNL-Ir-Shn" secondAttribute="centerX" id="rbJ-xL-NYQ"/>
                             <constraint firstAttribute="centerX" secondItem="rqx-ug-P5l" secondAttribute="centerX" id="st2-fx-FYy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pQT-Tl-2OO" secondAttribute="trailing" constant="10" id="w3v-YX-hzw"/>
                             <constraint firstAttribute="centerX" secondItem="pQT-Tl-2OO" secondAttribute="centerX" id="ytd-Ej-Vzi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoView" destination="ffo-NV-cVi" id="n9N-ee-Azw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmf-bo-bxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762" y="47"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="light-blue-background-3" width="552" height="597"/>
+    </resources>
 </document>

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewRelax : UIViewController
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property (strong, nonatomic) IBOutlet UIView *videoView;
+- (IBAction)play:(id)sender;
 
 @end
