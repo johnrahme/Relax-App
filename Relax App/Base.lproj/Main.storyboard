@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="762" y="47"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Sound Player-->
         <scene sceneID="5Zz-la-zxM">
             <objects>
-                <viewController id="mog-fS-xTV" sceneMemberID="viewController">
+                <viewController id="mog-fS-xTV" customClass="CustomSoundPlayer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vkf-kf-Zsw"/>
                         <viewControllerLayoutGuide type="bottom" id="lcK-0p-dxY"/>
@@ -156,8 +156,22 @@
                     <view key="view" contentMode="scaleToFill" id="Kk4-kW-YWD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-TQ-cQc">
+                                <rect key="frame" x="163" y="116" width="76" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="mog-fS-xTV" eventType="touchUpInside" id="o7t-zj-G1L"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="2Qh-TQ-cQc" id="Mbf-en-4mX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ull-Ps-2R2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

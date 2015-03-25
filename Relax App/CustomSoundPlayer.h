@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CustomSoundPlayer : UIViewController
+#import <AVFoundation/AVFoundation.h>
+int clicked;
+@interface CustomSoundPlayer : UIViewController{
+    AVAudioPlayer *audioPlayer;
+}
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
+- (IBAction)play:(id)sender;
 
 @end

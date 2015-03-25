@@ -7,6 +7,7 @@
 //
 
 #import "CustomSoundPlayer.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface CustomSoundPlayer ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupAudio];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +37,24 @@
 }
 */
 
+- (IBAction)play:(id)sender {
+    if(clicked == 0){
+        clicked = 1;
+        [audioPlayer play];
+        [_playButton setTitle:@"stop" forState:UIControlStateNormal];
+        
+    }
+    else{
+        clicked = 0;
+        [audioPlayer pause];
+        [_playButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
+}
+- (void)setupAudio{
+    NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"classic" ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:videoFile];
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    audioPlayer.numberOfLoops = 0;
+}
 @end
