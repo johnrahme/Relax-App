@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;

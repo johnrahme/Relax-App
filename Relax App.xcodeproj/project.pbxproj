@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848F9FCB1AC23E5E00C679EA /* classic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 848F9FCA1AC23E5E00C679EA /* classic.mp3 */; };
+		848F9FCE1AC23F9400C679EA /* CustomSoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F9FCD1AC23F9400C679EA /* CustomSoundPlayer.m */; };
 		8490393E1ABE29A900E67F77 /* kurt.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8490393D1ABE29A900E67F77 /* kurt.mp4 */; };
 		849039411ABE3B5000E67F77 /* ViewRelax.m in Sources */ = {isa = PBXBuildFile; fileRef = 849039401ABE3B5000E67F77 /* ViewRelax.m */; };
 		84E3B8B71ABE01E30049721A /* sound2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84E3B8B61ABE01E30049721A /* sound2.wav */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		848F9FCA1AC23E5E00C679EA /* classic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = classic.mp3; sourceTree = "<group>"; };
+		848F9FCC1AC23F9400C679EA /* CustomSoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSoundPlayer.h; sourceTree = "<group>"; };
+		848F9FCD1AC23F9400C679EA /* CustomSoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSoundPlayer.m; sourceTree = "<group>"; };
 		8490393C1ABE1D2800E67F77 /* kurt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = kurt.mp4; path = ../../../../Downloads/kurt.mp4; sourceTree = "<group>"; };
 		8490393D1ABE29A900E67F77 /* kurt.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = kurt.mp4; path = ../../../../Downloads/kurt.mp4; sourceTree = "<group>"; };
 		8490393F1ABE3B5000E67F77 /* ViewRelax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewRelax.h; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		84F1C7721ABA597C0092CB08 /* Relax App */ = {
 			isa = PBXGroup;
 			children = (
+				848F9FCA1AC23E5E00C679EA /* classic.mp3 */,
 				8490393C1ABE1D2800E67F77 /* kurt.mp4 */,
 				84E3B8B61ABE01E30049721A /* sound2.wav */,
 				84F1C7771ABA597C0092CB08 /* AppDelegate.h */,
@@ -102,6 +108,8 @@
 				84F1C77A1ABA597C0092CB08 /* ViewController.h */,
 				84F1C77B1ABA597C0092CB08 /* ViewController.m */,
 				84F1C77D1ABA597C0092CB08 /* Main.storyboard */,
+				848F9FCC1AC23F9400C679EA /* CustomSoundPlayer.h */,
+				848F9FCD1AC23F9400C679EA /* CustomSoundPlayer.m */,
 				8490393F1ABE3B5000E67F77 /* ViewRelax.h */,
 				849039401ABE3B5000E67F77 /* ViewRelax.m */,
 				84F1C7991ABA5B800092CB08 /* Ipad.storyboard */,
@@ -223,6 +231,7 @@
 				8490393E1ABE29A900E67F77 /* kurt.mp4 in Resources */,
 				84F1C79A1ABA5B800092CB08 /* Ipad.storyboard in Resources */,
 				84F1C77F1ABA597C0092CB08 /* Main.storyboard in Resources */,
+				848F9FCB1AC23E5E00C679EA /* classic.mp3 in Resources */,
 				84F1C7841ABA597C0092CB08 /* LaunchScreen.xib in Resources */,
 				84F1C7811ABA597C0092CB08 /* Images.xcassets in Resources */,
 			);
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848F9FCE1AC23F9400C679EA /* CustomSoundPlayer.m in Sources */,
 				84F1C77C1ABA597C0092CB08 /* ViewController.m in Sources */,
 				849039411ABE3B5000E67F77 /* ViewRelax.m in Sources */,
 				84F1C7791ABA597C0092CB08 /* AppDelegate.m in Sources */,

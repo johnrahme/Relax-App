@@ -1,21 +1,18 @@
 //
-//  ViewRelax.m
+//  CustomSoundPlayer.m
 //  Relax App
 //
-//  Created by admin on 21/03/15.
+//  Created by admin on 24/03/15.
 //  Copyright (c) 2015 AppNovum. All rights reserved.
 //
 
-#import "ViewRelax.h"
-#import "MediaPlayer/MediaPlayer.h"
+#import "CustomSoundPlayer.h"
 
-@interface ViewRelax ()
+@interface CustomSoundPlayer ()
 
 @end
 
-@implementation ViewRelax
-@synthesize moviePlayer;
-@synthesize videoView;
+@implementation CustomSoundPlayer
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,14 +34,4 @@
 }
 */
 
-- (IBAction)play:(id)sender {
-    NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"classic" ofType:@"mp3"];
-    
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:videoFile]];
-    moviePlayer.view.frame = videoView.frame;
-    [self.view addSubview:moviePlayer.view];
-    [moviePlayer prepareToPlay];
-    [moviePlayer pause];
-
-}
 @end
