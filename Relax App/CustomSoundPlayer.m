@@ -14,6 +14,7 @@
 @end
 
 @implementation CustomSoundPlayer
+int sliderValue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,11 +51,61 @@
         [_playButton setTitle:@"Start" forState:UIControlStateNormal];
     }
 }
+
 - (void)setupAudio{
+    [self customSlider];
     NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"classic" ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:videoFile];
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     audioPlayer.numberOfLoops = 0;
+    //Setup the slider
+    _sliderO.maximumValue = audioPlayer.duration;
+    _sliderO.value = 0;
+    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+}
+- (IBAction)sliderA:(id)sender {
+    bool wasPlaying = audioPlayer.playing;
+    [audioPlayer pause];
+    audioPlayer.currentTime = _sliderO.value;
+    if (wasPlaying) {
+        [audioPlayer play];
+    }
+    
+}
+- (void)updateSlider{
+    _sliderO.value = audioPlayer.currentTime;
+    if (!audioPlayer.playing) {
+        [_playButton setTitle:@"Start" forState:UIControlStateNormal];
+        clicked = 0;
+    }
+    [self updateText];
+    
+}
+
+- (void) updateText{
+    //_timeL.text = [NSString stringWithFormat:@"%.f", audioPlayer.currentTime];
+    //_timeR.text = [NSString stringWithFormat:@"%.f", audioPlayer.duration];
+    
+    //A somewhat bad way of doing this, might be done better
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss"];
+    NSDate *currDate = [NSDate dateWithTimeIntervalSince1970:audioPlayer.currentTime];
+    NSDate *endDate = [NSDate dateWithTimeIntervalSince1970:audioPlayer.duration];
+    _timeL.text = [dateFormatter stringFromDate:currDate];
+    _timeR.text = [dateFormatter stringFromDate:endDate];
+    
+}
+- (IBAction)restartA:(id)sender {
+    [audioPlayer pause];
+    audioPlayer.currentTime = 0;
+    if (clicked) {
+        [audioPlayer play];
+    }
+    
+}
+- (void)customSlider{
+    UIImage *thumbImage = [UIImage imageNamed:@"steelButton.png"];
+    [_sliderO setThumbImage:thumbImage forState:UIControlStateNormal];
 }
 @end

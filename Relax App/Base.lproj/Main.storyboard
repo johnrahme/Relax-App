@@ -157,8 +157,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-TQ-cQc">
-                                <rect key="frame" x="163" y="116" width="76" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-TQ-cQc">
+                                <rect key="frame" x="262" y="106" width="76" height="30"/>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -166,11 +166,50 @@
                                     <action selector="play:" destination="mog-fS-xTV" eventType="touchUpInside" id="o7t-zj-G1L"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r3y-AO-IUE">
+                                <rect key="frame" x="125" y="187" width="350" height="31"/>
+                                <connections>
+                                    <action selector="sliderA:" destination="mog-fS-xTV" eventType="valueChanged" id="ujy-EZ-Q9n"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-Pd-VV2">
+                                <rect key="frame" x="486" y="191" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shu-Jq-Bz6">
+                                <rect key="frame" x="262" y="144" width="76" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartA:" destination="mog-fS-xTV" eventType="touchUpInside" id="Nt7-fX-kDN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xa-tx-8Zg">
+                                <rect key="frame" x="37" y="191" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yyq-Pd-VV2" secondAttribute="trailing" constant="2" id="SLa-tN-ub1"/>
+                            <constraint firstItem="4Xa-tx-8Zg" firstAttribute="leading" secondItem="Kk4-kW-YWD" secondAttribute="leadingMargin" constant="21" id="YeK-jb-kjY"/>
+                            <constraint firstItem="Yyq-Pd-VV2" firstAttribute="leading" secondItem="r3y-AO-IUE" secondAttribute="trailing" constant="13" id="ZYE-RJ-XaB"/>
+                            <constraint firstAttribute="centerX" secondItem="2Qh-TQ-cQc" secondAttribute="centerX" id="o7J-ye-jHa"/>
+                            <constraint firstAttribute="centerX" secondItem="r3y-AO-IUE" secondAttribute="centerX" id="sgk-aM-Hwt"/>
+                            <constraint firstItem="r3y-AO-IUE" firstAttribute="leading" secondItem="4Xa-tx-8Zg" secondAttribute="trailing" constant="20" id="tuu-bM-tF2"/>
+                            <constraint firstAttribute="centerX" secondItem="shu-Jq-Bz6" secondAttribute="centerX" id="tux-dI-R3e"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="2Qh-TQ-cQc" id="Mbf-en-4mX"/>
+                        <outlet property="sliderO" destination="r3y-AO-IUE" id="5b3-Yy-Vut"/>
+                        <outlet property="timeL" destination="4Xa-tx-8Zg" id="3Bk-7o-1We"/>
+                        <outlet property="timeR" destination="Yyq-Pd-VV2" id="3gX-jI-dWH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ull-Ps-2R2" userLabel="First Responder" sceneMemberID="firstResponder"/>

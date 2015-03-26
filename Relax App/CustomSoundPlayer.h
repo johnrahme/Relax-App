@@ -14,5 +14,10 @@ int clicked;
 }
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 - (IBAction)play:(id)sender;
+@property (strong, nonatomic) IBOutlet UISlider *sliderO;
+- (IBAction)sliderA:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *timeL;
+@property (strong, nonatomic) IBOutlet UILabel *timeR;
+- (IBAction)restartA:(id)sender;
 
 @end
