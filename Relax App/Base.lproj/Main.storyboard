@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,41 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sQ-bA-yyf">
-                                <rect key="frame" x="257" y="168" width="86" height="30"/>
-                                <state key="normal" title="Start video!">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9F-ii-51O">
+                                <rect key="frame" x="178" y="105" width="244" height="26"/>
+                                <state key="normal" title="Progressiv avspänning liggandes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7n-Ze-PJs"/>
+                                    <action selector="Ex1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6wf-0Y-gG5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4R-eY-95w">
-                                <rect key="frame" x="277" y="93" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl4-oT-Xmx">
+                                <rect key="frame" x="181" y="139" width="239" height="30"/>
+                                <state key="normal" title="Progressic avspänning sittandes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cVC-Bl-7q7" kind="presentation" id="w2g-yn-qKt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW9-sO-GcS">
-                                <rect key="frame" x="208" y="245" width="115" height="30"/>
-                                <state key="normal" title="Try number 2!">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mog-fS-xTV" kind="presentation" id="wE6-MI-GwE"/>
+                                    <action selector="Ex2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LbX-Y5-OdW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8sQ-bA-yyf" firstAttribute="top" secondItem="T4R-eY-95w" secondAttribute="bottom" constant="45" id="2p5-x7-Mv0"/>
-                            <constraint firstAttribute="centerX" secondItem="8sQ-bA-yyf" secondAttribute="centerX" id="X59-o5-vlp"/>
-                            <constraint firstAttribute="centerX" secondItem="T4R-eY-95w" secondAttribute="centerX" id="jr2-R0-Trm"/>
-                            <constraint firstItem="8sQ-bA-yyf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="148" id="kZM-HD-1t2"/>
-                            <constraint firstAttribute="centerX" secondItem="8sQ-bA-yyf" secondAttribute="centerX" id="nO0-gh-rgr"/>
+                            <constraint firstAttribute="centerX" secondItem="hl4-oT-Xmx" secondAttribute="centerX" constant="-0.5" id="OMn-QM-Nzk"/>
+                            <constraint firstAttribute="centerX" secondItem="N9F-ii-51O" secondAttribute="centerX" id="Vaj-eZ-e7w"/>
+                            <constraint firstItem="hl4-oT-Xmx" firstAttribute="top" secondItem="N9F-ii-51O" secondAttribute="bottom" constant="8" id="YWB-G4-ZPg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -148,7 +137,7 @@
         <!--Custom Sound Player-->
         <scene sceneID="5Zz-la-zxM">
             <objects>
-                <viewController id="mog-fS-xTV" customClass="CustomSoundPlayer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomSoundPlayer" id="mog-fS-xTV" customClass="CustomSoundPlayer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vkf-kf-Zsw"/>
                         <viewControllerLayoutGuide type="bottom" id="lcK-0p-dxY"/>
@@ -158,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-TQ-cQc">
-                                <rect key="frame" x="262" y="106" width="76" height="30"/>
+                                <rect key="frame" x="262" y="182" width="76" height="30"/>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -167,19 +156,19 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="r3y-AO-IUE">
-                                <rect key="frame" x="125" y="187" width="350" height="31"/>
+                                <rect key="frame" x="128" y="263" width="350" height="31"/>
                                 <connections>
                                     <action selector="sliderA:" destination="mog-fS-xTV" eventType="valueChanged" id="ujy-EZ-Q9n"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-Pd-VV2">
-                                <rect key="frame" x="486" y="191" width="87" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MaxTid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyq-Pd-VV2">
+                                <rect key="frame" x="489" y="267" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shu-Jq-Bz6">
-                                <rect key="frame" x="262" y="144" width="76" height="30"/>
+                                <rect key="frame" x="262" y="220" width="76" height="30"/>
                                 <state key="normal" title="Restart">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -187,12 +176,27 @@
                                     <action selector="restartA:" destination="mog-fS-xTV" eventType="touchUpInside" id="Nt7-fX-kDN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xa-tx-8Zg">
-                                <rect key="frame" x="37" y="191" width="70" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="CurrTid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xa-tx-8Zg">
+                                <rect key="frame" x="37" y="267" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Övning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZD-do-bgM">
+                                <rect key="frame" x="130" y="118" width="340" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avc-t6-ngW">
+                                <rect key="frame" x="16" y="20" width="76" height="30"/>
+                                <state key="normal" title="Tillbaka">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="mog-fS-xTV" eventType="touchUpInside" id="DLh-sL-hJU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -200,12 +204,15 @@
                             <constraint firstItem="4Xa-tx-8Zg" firstAttribute="leading" secondItem="Kk4-kW-YWD" secondAttribute="leadingMargin" constant="21" id="YeK-jb-kjY"/>
                             <constraint firstItem="Yyq-Pd-VV2" firstAttribute="leading" secondItem="r3y-AO-IUE" secondAttribute="trailing" constant="13" id="ZYE-RJ-XaB"/>
                             <constraint firstAttribute="centerX" secondItem="2Qh-TQ-cQc" secondAttribute="centerX" id="o7J-ye-jHa"/>
+                            <constraint firstAttribute="centerX" secondItem="CZD-do-bgM" secondAttribute="centerX" id="qJp-ke-xMJ"/>
                             <constraint firstAttribute="centerX" secondItem="r3y-AO-IUE" secondAttribute="centerX" id="sgk-aM-Hwt"/>
                             <constraint firstItem="r3y-AO-IUE" firstAttribute="leading" secondItem="4Xa-tx-8Zg" secondAttribute="trailing" constant="20" id="tuu-bM-tF2"/>
                             <constraint firstAttribute="centerX" secondItem="shu-Jq-Bz6" secondAttribute="centerX" id="tux-dI-R3e"/>
+                            <constraint firstItem="2Qh-TQ-cQc" firstAttribute="top" secondItem="CZD-do-bgM" secondAttribute="bottom" constant="81" id="u4w-oy-ZKU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="CZD-do-bgM" id="Jnf-IH-DVq"/>
                         <outlet property="playButton" destination="2Qh-TQ-cQc" id="Mbf-en-4mX"/>
                         <outlet property="sliderO" destination="r3y-AO-IUE" id="5b3-Yy-Vut"/>
                         <outlet property="timeL" destination="4Xa-tx-8Zg" id="3Bk-7o-1We"/>

@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 #import "MediaPlayer/MediaPlayer.h"
+#import "CustomSoundPlayer.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-@synthesize moviePlayer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,17 +24,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)playSong{
-    
-    
+
+- (IBAction)Ex1:(id)sender {
+    [self gotoSoundPlayer:@"ProgLiggande" :@"m4a" :@"Progressiv avspänning liggandes"];
 }
 
-- (IBAction)play:(id)sender {
-    NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"sound2" ofType:@"wav"];
+- (IBAction)Ex2:(id)sender {
+    [self gotoSoundPlayer:@"ProgSittande" :@"m4a" :@"Progressiv avspänning sittandes"];
+}
+- (void)gotoSoundPlayer:(NSString*)soundUrl :(NSString*)soundType :(NSString*)labelText{
+    CustomSoundPlayer *soundPlayer = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomSoundPlayer"];
+    soundPlayer.soundUrl = soundUrl;
+    soundPlayer.soundType = soundType;
+    soundPlayer.labelText = labelText;
+    soundPlayer.sound = false;
     
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL fileURLWithPath:videoFile]];
-    moviePlayer.view.frame = CGRectMake(0, 0, self.view.frame.size.width, 120);
-    [self.view addSubview:moviePlayer.view];
-    [moviePlayer prepareToPlay];
+    [self presentViewController: soundPlayer animated: YES completion:nil];
 }
 @end

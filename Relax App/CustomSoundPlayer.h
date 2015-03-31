@@ -12,6 +12,12 @@ int clicked;
 @interface CustomSoundPlayer : UIViewController{
     AVAudioPlayer *audioPlayer;
 }
+@property (strong, nonatomic) NSString *soundUrl;
+@property (strong, nonatomic) NSString *soundType;
+@property (strong, nonatomic) NSString *labelText;
+@property (nonatomic) BOOL sound;
+
+
 @property (strong, nonatomic) IBOutlet UIButton *playButton;
 - (IBAction)play:(id)sender;
 @property (strong, nonatomic) IBOutlet UISlider *sliderO;
@@ -19,5 +25,7 @@ int clicked;
 @property (strong, nonatomic) IBOutlet UILabel *timeL;
 @property (strong, nonatomic) IBOutlet UILabel *timeR;
 - (IBAction)restartA:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *label;
+- (IBAction)back:(id)sender;
 
 @end

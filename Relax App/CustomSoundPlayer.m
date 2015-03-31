@@ -8,6 +8,7 @@
 
 #import "CustomSoundPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ViewController.h"
 
 @interface CustomSoundPlayer ()
 
@@ -20,6 +21,7 @@ int sliderValue;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupAudio];
+    [self setupLayout];
 
 }
 
@@ -38,6 +40,10 @@ int sliderValue;
 }
 */
 
+- (void)setupLayout{
+    _label.text = _labelText;
+}
+
 - (IBAction)play:(id)sender {
     if(clicked == 0){
         clicked = 1;
@@ -54,7 +60,7 @@ int sliderValue;
 
 - (void)setupAudio{
     [self customSlider];
-    NSString *videoFile = [[NSBundle mainBundle] pathForResource: @"classic" ofType:@"mp3"];
+    NSString *videoFile = [[NSBundle mainBundle] pathForResource: _soundUrl ofType:_soundType];
     NSURL *url = [NSURL fileURLWithPath:videoFile];
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
@@ -107,5 +113,16 @@ int sliderValue;
 - (void)customSlider{
     UIImage *thumbImage = [UIImage imageNamed:@"steelButton.png"];
     [_sliderO setThumbImage:thumbImage forState:UIControlStateNormal];
+    
+    UIImage *minImage = [[UIImage imageNamed:@"slider_minimum.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
+    [_sliderO setMinimumTrackImage:minImage forState:UIControlStateNormal];
+    
+    UIImage *maxImage = [[UIImage imageNamed:@"slider_maximum.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
+    [_sliderO setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+}
+- (IBAction)back:(id)sender {
+    ViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    [audioPlayer stop];
+    [self presentViewController: home animated: YES completion:nil];
 }
 @end

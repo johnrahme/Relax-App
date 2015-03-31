@@ -11,8 +11,9 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController
-@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
-- (IBAction)play:(id)sender;
+- (IBAction)Ex1:(id)sender;
+- (IBAction)Ex2:(id)sender;
+
 
 @end
 
