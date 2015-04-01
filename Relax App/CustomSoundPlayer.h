@@ -10,12 +10,15 @@
 #import <AVFoundation/AVFoundation.h>
 int clicked;
 @interface CustomSoundPlayer : UIViewController{
-    AVAudioPlayer *audioPlayer;
+    NSTimer *timer;
 }
 @property (strong, nonatomic) NSString *soundUrl;
 @property (strong, nonatomic) NSString *soundType;
 @property (strong, nonatomic) NSString *labelText;
 @property (nonatomic) BOOL sound;
+@property (strong) AVAudioPlayer *audioPlayer;
+
+
 
 
 @property (strong, nonatomic) IBOutlet UIButton *playButton;

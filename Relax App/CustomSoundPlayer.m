@@ -11,10 +11,10 @@
 #import "ViewController.h"
 
 @interface CustomSoundPlayer ()
-
 @end
 
 @implementation CustomSoundPlayer
+@synthesize audioPlayer;
 int sliderValue;
 
 - (void)viewDidLoad {
@@ -22,6 +22,7 @@ int sliderValue;
     // Do any additional setup after loading the view.
     [self setupAudio];
     [self setupLayout];
+    clicked = 0;
 
 }
 
@@ -47,13 +48,16 @@ int sliderValue;
 - (IBAction)play:(id)sender {
     if(clicked == 0){
         clicked = 1;
+        [audioPlayer prepareToPlay];
         [audioPlayer play];
+        NSLog(@"Playing");
         [_playButton setTitle:@"stop" forState:UIControlStateNormal];
         
     }
     else{
         clicked = 0;
-        [audioPlayer pause];
+        NSLog(@"stopping");
+        [audioPlayer stop];
         [_playButton setTitle:@"Start" forState:UIControlStateNormal];
     }
 }
@@ -65,28 +69,30 @@ int sliderValue;
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     audioPlayer.numberOfLoops = 0;
+    [audioPlayer stop];
     //Setup the slider
     _sliderO.maximumValue = audioPlayer.duration;
     _sliderO.value = 0;
-    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
 }
 - (IBAction)sliderA:(id)sender {
     bool wasPlaying = audioPlayer.playing;
-    [audioPlayer pause];
+    [audioPlayer stop];
     audioPlayer.currentTime = _sliderO.value;
     if (wasPlaying) {
+        [audioPlayer prepareToPlay];
         [audioPlayer play];
     }
     
 }
 - (void)updateSlider{
     _sliderO.value = audioPlayer.currentTime;
-    if (!audioPlayer.playing) {
+    if (!self.audioPlayer.playing) {
         [_playButton setTitle:@"Start" forState:UIControlStateNormal];
         clicked = 0;
+        NSLog(@"Händer");
     }
     [self updateText];
-    
 }
 
 - (void) updateText{
@@ -103,9 +109,10 @@ int sliderValue;
     
 }
 - (IBAction)restartA:(id)sender {
-    [audioPlayer pause];
+    [audioPlayer stop];
     audioPlayer.currentTime = 0;
     if (clicked) {
+        [audioPlayer prepareToPlay];
         [audioPlayer play];
     }
     
@@ -123,6 +130,9 @@ int sliderValue;
 - (IBAction)back:(id)sender {
     ViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     [audioPlayer stop];
+    audioPlayer =nil;
+    [timer invalidate];
+    timer = nil;
     [self presentViewController: home animated: YES completion:nil];
 }
 @end
