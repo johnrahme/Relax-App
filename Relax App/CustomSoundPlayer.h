@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 int clicked;
-@interface CustomSoundPlayer : UIViewController{
+@interface CustomSoundPlayer : UIViewController <AVAudioPlayerDelegate>{
     NSTimer *timer;
 }
 @property (strong, nonatomic) NSString *soundUrl;

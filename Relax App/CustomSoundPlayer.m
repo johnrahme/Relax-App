@@ -22,7 +22,8 @@ int sliderValue;
     // Do any additional setup after loading the view.
     [self setupAudio];
     [self setupLayout];
-    clicked = 0;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector: @selector(didEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
+    
 
 }
 
@@ -47,28 +48,35 @@ int sliderValue;
 
 - (IBAction)play:(id)sender {
     if(clicked == 0){
-        clicked = 1;
-        [audioPlayer prepareToPlay];
-        [audioPlayer play];
-        NSLog(@"Playing");
-        [_playButton setTitle:@"stop" forState:UIControlStateNormal];
-        
+        [self playAudio];
     }
     else{
-        clicked = 0;
-        NSLog(@"stopping");
-        [audioPlayer stop];
-        [_playButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self pauseAudio];
     }
+}
+-(void)playAudio{
+    clicked = 1;
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+    NSLog(@"Playing");
+    [_playButton setTitle:@"stop" forState:UIControlStateNormal];
+}
+-(void)pauseAudio{
+    clicked = 0;
+    NSLog(@"stopping");
+    [audioPlayer stop];
+    [_playButton setTitle:@"Start" forState:UIControlStateNormal];
 }
 
 - (void)setupAudio{
     [self customSlider];
+    
     NSString *videoFile = [[NSBundle mainBundle] pathForResource: _soundUrl ofType:_soundType];
     NSURL *url = [NSURL fileURLWithPath:videoFile];
     NSError *error;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     audioPlayer.numberOfLoops = 0;
+    audioPlayer.delegate = self;
     [audioPlayer stop];
     //Setup the slider
     _sliderO.maximumValue = audioPlayer.duration;
@@ -83,16 +91,16 @@ int sliderValue;
         [audioPlayer prepareToPlay];
         [audioPlayer play];
     }
+    //Can be made in a better way, on release and on drag actions for slider
+    if(_sliderO.value == _sliderO.maximumValue&&wasPlaying){
+        [self pauseAudio];
+    }
     
 }
 - (void)updateSlider{
     _sliderO.value = audioPlayer.currentTime;
-    if (!self.audioPlayer.playing) {
-        [_playButton setTitle:@"Start" forState:UIControlStateNormal];
-        clicked = 0;
-        NSLog(@"Händer");
-    }
     [self updateText];
+
 }
 
 - (void) updateText{
@@ -128,11 +136,32 @@ int sliderValue;
     [_sliderO setMaximumTrackImage:maxImage forState:UIControlStateNormal];
 }
 - (IBAction)back:(id)sender {
+    [self resetStuff];
     ViewController *home = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    [self presentViewController: home animated: YES completion:nil];
+
+    
+}
+- (void)resetStuff{
     [audioPlayer stop];
     audioPlayer =nil;
     [timer invalidate];
     timer = nil;
-    [self presentViewController: home animated: YES completion:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:nil];
+    
+}
+-(void)didEnterBackground{
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"kDisplayStatusLocked"]) {
+        clicked = 0;
+        NSLog(@"StoppedByDidEnterBackground");
+        [audioPlayer stop];
+        [_playButton setTitle:@"Start" forState:UIControlStateNormal];
+    }
+
+    
+}
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    [_playButton setTitle:@"Start" forState:UIControlStateNormal];
+    clicked = 0;
 }
 @end
